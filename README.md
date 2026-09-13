@@ -17,5 +17,5 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 
-token
-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
+<!-- token
+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 -->
