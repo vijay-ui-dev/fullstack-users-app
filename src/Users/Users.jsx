@@ -7,7 +7,7 @@ function Users( {onUserAdded } ){
     
     const addUser= async ()=>{
         if(userName.trim()==="")return;
-         await fetch("https://fullstack-backend-app.onrender.com//users", {
+         await fetch("https://fullstack-backend-app.onrender.com/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: userName, age: 0, city: "" })
