@@ -7,7 +7,7 @@ function UsersList(){
     // const [loading, setLoading] = useState(true);
     // const fetchUsers = async ()=> {
     //         try {
-    //             const apiResponse = await fetch("http://localhost:3000/users");
+    //             const apiResponse = await fetch("https://fullstack-backend-app.onrender.com//users");
     //             const fetchData = await apiResponse.json();
     //             setUsersDetails(fetchData)
     //         }
@@ -26,7 +26,7 @@ function UsersList(){
 
   const fetchUsers = async () => {
     try {
-      const apiResponse = await fetch("http://localhost:3000/users");
+      const apiResponse = await fetch("https://fullstack-backend-app.onrender.com//users");
       const fetchData = await apiResponse.json();
       setUsersDetails(fetchData);
     } catch (error) {
@@ -41,7 +41,7 @@ function UsersList(){
   }, []);
   
   const deleteUse = async (id) => {
-    await fetch(`http://localhost:3000/users/${id}`, {
+    await fetch(`https://fullstack-backend-app.onrender.com//users/${id}`, {
         method: "DELETE",
     })
     fetchUsers(); 

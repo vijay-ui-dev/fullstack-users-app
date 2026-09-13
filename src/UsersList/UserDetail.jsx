@@ -6,7 +6,7 @@ function UserDetail(){
     const [user, setUser] = useState(null);
     const [editName, setEditName] =useState("");
     const fetchUser = async ()=> {
-            const response = await fetch(`http://localhost:3000/users/${id}`,{
+            const response = await fetch(`https://fullstack-backend-app.onrender.com//users/${id}`,{
             });
             const data = await response.json();
             setUser(data);
@@ -19,7 +19,7 @@ function UserDetail(){
     }, [id])
 
     const updateUser = async() => {
-        const response = await fetch(`http://localhost:3000/users/${id}`, {
+        const response = await fetch(`https://fullstack-backend-app.onrender.com//users/${id}`, {
             method:"PUT",
             headers : {"Content-Type": "application/json"},
             body : JSON.stringify({ name: editName})
