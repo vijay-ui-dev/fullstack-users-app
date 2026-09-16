@@ -22,7 +22,8 @@ function UsersList(){
     //     fetchUsers();
     // }, [])
     const [usersDetails, setUsersDetails] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [searchUser, setSearchUser] = useState('')
 
   const fetchUsers = async () => {
     try {
@@ -39,6 +40,12 @@ function UsersList(){
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  // filter user
+  const filteredUser = usersDetails.filter((user)=> 
+    user.name.toLowerCase().includes(searchUser.toLowerCase())
+    // user.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
   
   const deleteUse = async (id) => {
     await fetch(`https://fullstack-backend-app.onrender.com/users/${id}`, {
@@ -52,9 +59,14 @@ function UsersList(){
     return(
         <>
         <Users onUserAdded={fetchUsers}></Users>
+        <input 
+        type="text"
+        placeholder="Search user name"
+        value={searchUser}
+        onChange={(u)=> setSearchUser(u.target.value)} />
             <div className="allUsers">
                 {
-                    usersDetails.map((user)=> (
+                    filteredUser.map((user)=> (
                         <div className="singleUser" key={user._id}>
                             <Link to={`/user-list/${user._id}`}>
                                 <p>{user.name}</p>
