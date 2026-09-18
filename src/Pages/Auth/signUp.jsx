@@ -20,7 +20,7 @@ function SignUp(){
                 setSignupMsg(data.error);
                 return;
             }
-            setSignupMsg = "Signup successful! Ab login karo.";
+            setSignupMsg("Signup successful! Ab login karo.");
             navigate("/login")
         }
         catch(error) {
