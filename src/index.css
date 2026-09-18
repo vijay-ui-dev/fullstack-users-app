@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+input {
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    padding:12px 10px;
+}
+.primiryBtn {
+    width: 200px;
+    padding: 11px 8px;
+    color: #fff;
+    border-radius: 6px;
+    background: #d72501;
+    box-shadow: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.nrmlBtn {
+    padding: 8px 8px;
+    color: #fff;
+    border-radius: 4px;
+    background: #d72501;
+    box-shadow: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+.primiryBtn:hover {
+    background: #007b00;
+}
+
+/* Login css start */
+.loginMain {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../src/assets/images/login-bg.webp) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    padding-left: 50px;
+}
+.loginBox {
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(1, 2, 6, 0.8);
+    width: 350px;
+    text-align: center;
+}
+.logo {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+.loginBox input {
+    margin-bottom: 20px;
+}
+.loginBox input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+
+}
+.loginBox .errorMsg {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.loginLinking {
+    margin: 20px 5px 10px;
+    color: #fff;
+}
+
+.loginLinking a {
+    color: #d72501;
+    text-decoration: none;
+    font-size: 16px;
+
+}
+
+/* Navigation css start */
+.navSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 50px;
+    border-bottom: 1px solid #c2c2c2;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.logoImg {
+    max-width: 100px;
+}
+.logoImg img {
+    max-width: 100%;
+}
+
+.navRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navRow a {
+    color: #004800;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navRow a:hover {
+    color: #d72501;
+}

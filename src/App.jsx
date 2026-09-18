@@ -7,8 +7,11 @@ import DataContext from './Context/DataContext.jsx';
 import Home from './Pages/Home/Home.jsx';
 import About from './Pages/About/About.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Nav from './Pages/NavBar/Nav.jsx';
 import UserDetail from './UsersList/UserDetail.jsx';
+import GeminiAi from './GeminiAi/GeminiAi.jsx';
+import Login from './Pages/Auth/Login.jsx';
+import SignUp from './Pages/Auth/signUp.jsx';
+import ProtectedRoute from './Pages/Auth/ProtectedRoute.jsx';
 
 function App() {
   return (
@@ -21,12 +24,34 @@ function App() {
         <UsersList />
        </DataContext.Provider> */}
        <BrowserRouter>
-       <Nav/>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/about' element={<About/>}></Route>
-          <Route path='/user-list' element={<UsersList />}></Route>
-          <Route path='/user-list/:id' element={<UserDetail />}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/sign-up' element={<SignUp />}></Route>
+          <Route path='/' element={
+            <ProtectedRoute>
+              <Home/>
+            </ProtectedRoute>
+            }></Route>
+          <Route path='/about' element={
+            <ProtectedRoute>
+              <About/>
+            </ProtectedRoute>
+          }></Route>
+          <Route path='/user-list' element={
+            <ProtectedRoute>
+              <UsersList />
+            </ProtectedRoute>
+            }></Route>
+          <Route path='/user-list/:id' element={
+            <ProtectedRoute>
+              <UserDetail />
+            </ProtectedRoute>
+            }></Route>
+          <Route path='/ask-question' element={
+            <ProtectedRoute>
+              <GeminiAi />
+            </ProtectedRoute>
+            }></Route>
         </Routes>
        </BrowserRouter>
     </>
