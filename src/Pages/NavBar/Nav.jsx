@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import logo from "./../../assets/images/vijay-logo.png";
 
 
 function Nav() {
@@ -16,7 +17,7 @@ function Nav() {
             <div className="navSection">
                 { token ? (
                     <>  <div className="logoImg">
-                            <img src="./src/assets/images/vijay-logo.png" title="Vijay Kumar Mishra" alt="Vijay Kumar Mishra" />
+                            <img src={logo} title="Vijay Kumar Mishra" alt="Vijay Kumar Mishra" />
                         </div>
                         <div className="navRow">
                             <Link to="/">Home</Link>

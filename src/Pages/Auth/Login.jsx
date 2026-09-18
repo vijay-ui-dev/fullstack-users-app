@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "./../../assets/images/vijay-logo.png"
 
 function Login(){
     const [email, setEmail]= useState('');
@@ -33,7 +34,7 @@ function Login(){
         <>
             <div className="loginMain">
                 <div className="loginBox">
-                    <img src="src/assets/images/vijay-logo.png" alt="Vijay Kumar Mishra" title="Vijay Kumar Mishra" className="logo" />
+                    <img src={logo} alt="Vijay Kumar Mishra" title="Vijay Kumar Mishra" className="logo" />
                     <form>
                         <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}  placeholder="Enter your email" />
                         <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="Please enter your Password" />
